@@ -13,7 +13,6 @@ img {
   /* img(인라인 요소) 하단에 Baseline 공백을 제거 */
   display: block;
 }
-
 /*HEADER*/
 header {
   width: 100%;
@@ -238,3 +237,19 @@ footer .copyright {
 footer .logo {
   margin: 30px auto 0;
 }
+/**
+.btn {
+  width: 130px;
+}
+.btn.btn--primary{
+  color: #fff;
+  background-color: #EA9926;
+  border: none;
+}
+.btn.btn--primary:hover {
+  background-color: #EA9926;
+}
+.btn.block {
+  width: 100%;
+}
+**/
