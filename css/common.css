@@ -13,6 +13,64 @@ img {
   /* img(인라인 요소) 하단에 Baseline 공백을 제거 */
   display: block;
 }
+/*INNER*/
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*BUTTON*/
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  transition: .4s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #FFF;
+}
+.btn.btn--reverse {
+  background-color: #333;
+  color: #FFF;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18;
+}
+.btn.btn--brown:hover {
+  color: #FFF;
+  background-color: #592B18;
+}
+.btn.btn--gold {
+  color: #D9AA8A;
+  border-color: #D9AA8A;
+}
+.btn.btn--gold:hover {
+  color: #FFF;
+  background-color: #D9AA8A;
+}
+.btn.btn--white {
+  color: #FFF;
+  border-color: #FFF;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #FFF;
+}
 /*HEADER*/
 header {
   width: 100%;
@@ -237,16 +295,10 @@ footer .copyright {
 footer .logo {
   margin: 30px auto 0;
 }
-
-.btn {
-  width: 130px;
-  height: 40px;
-}
 .btn.btn--primary{
   color: #fff;
   background-color: #EA9926;
   border: none;
-  border-radius: 4px;
 }
 .btn.btn--primary:hover {
   background-color: #cc8823;
