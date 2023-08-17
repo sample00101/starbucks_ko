@@ -6,34 +6,8 @@ const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
 // 페이지에 스크롤 이벤트를 추가!
 // 스크롤이 지나치게 자주 발생하는 것을 조절(throttle, 일부러 부하를 줌)
-window.addEventListener('scroll', function () {
-  // 페이지 스크롤 위치가 500px이 넘으면.
-  if (window.scrollY > 500) {
-    // Badge 요소 숨기기!
-    gsap.to(badgeEl, .6, {
-      opacity: 0,
-      display: 'none'
-    });
-    // 상단으로 이동 버튼 보이기!
-    gsap.to(toTopEl, .6, {
-      opacity: 1,
-      x: 0
-    });
 
-  // 페이지 스크롤 위치가 500px이 넘지 않으면.
-  } else {
-    // Badge 요소 보이기!
-    gsap.to(badgeEl, .6, {
-      opacity: 1,
-      display: 'block'
-    });
-    // 상단으로 이동 버튼 숨기기!
-    gsap.to(toTopEl, .6, {
-      opacity: 0,
-      x: 100
-    });
-  }
-});
+
 toTopEl.addEventListener('click', function () {
   gsap.to(window, .6, {
     scrollTo: 0
@@ -82,17 +56,6 @@ new Swiper('.promotion .swiper', {
     nextEl: '.promotion .swiper-button-next' // 다음 버튼 요소
   }
 });
-new Swiper('.awards .swiper', {
-  autoplay: true, // 자동 재생 여부
-  loop: true, // 반복 재생 여부
-  spaceBetween: 30, // 슬라이드 사이 여백
-  slidesPerView: 5, // 한 번에 보여줄 슬라이드 개수
-  navigation: { // 슬라이드 이전/다음 버튼 사용
-    prevEl: '.awards .swiper-button-prev', // 이전 버튼 요소
-    nextEl: '.awards .swiper-button-next' // 다음 버튼 요소
-  }
-});
-
 
 /**
  * Promotion 슬라이드 토글 기능
@@ -102,41 +65,14 @@ const promotionEl = document.querySelector('section.promotion');
 // 슬라이드 영역를 토글하는 버튼 검색!
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 
+
+// PROMOTION 영역을 숨겨진 상태로 시작하기 위해 "hide" 클래스를 추가
+promotionEl.classList.add('hide');
+
 // 토글 버튼을 클릭하면,
 promotionToggleBtn.addEventListener('click', function () {
-  if (promotionEl.classList.contains('hide')) {
-    promotionEl.classList.remove('hide');
-  } else {
-    promotionEl.classList.add('hide');
-  }
+  promotionEl.classList.toggle('hide'); // "hide" 클래스 토글
 });
-
-
-/**
- * 부유하는 요소 관리
- */
-gsap.to('.floating1', 1.5, {
-  delay: 1, // 얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정.
-  y: 15, // `transform: translateY(수치);`와 같음. 수직으로 얼마나 움직일지 설정.
-  repeat: -1, // 몇 번 반복하는지를 설정, `-1`은 무한 반복.
-  yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생.
-  ease: Power1.easeInOut // Easing 함수 적용.
-});
-gsap.to('.floating2', 2, {
-  delay: .5,
-  y: 15,
-  repeat: -1,
-  yoyo: true,
-  ease: Power1.easeInOut
-});
-gsap.to('.floating3', 2.5, {
-  delay: 1.5,
-  y: 20,
-  repeat: -1,
-  yoyo: true,
-  ease: Power1.easeInOut
-});
-
 
 /**
  * 요소가 화면에 보여짐 여부에 따른 요소 관리
