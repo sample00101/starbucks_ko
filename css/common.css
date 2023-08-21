@@ -143,7 +143,10 @@ img {
 }
 .btn.btn--gold {
   color: #FFF;
-    border-color: #fff;
+  border-color: #fff;
+  position: relative; /* 위치를 상대적으로 설정합니다. */
+  left: 300px;
+  top: 270px;
 }
 .btn.btn--gold:hover {
   color: #000000;
